@@ -1,4 +1,5 @@
-# Collaborative Weekly Report Management System
+# TEAM 41 BVRITH
+Collaborative Weekly Report Management System
 
 Spring Boot + MySQL full-stack starter based on your `ProblemStatement.pdf`.
 
