@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weekly Report Manager</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="navbar">
+    <div class="brand">Weekly Report Manager</div>
+    <nav class="nav-links">
+        <a href="#login">Login</a>
+        <a href="#create">Create Report</a>
+        <a href="#entry">Add Entry</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#entries">Entries</a>
+        <a href="#preview">Preview</a>
+    </nav>
+    <div class="nav-actions">
+        <span id="navUser" class="nav-user">Not logged in</span>
+        <button id="logoutBtn" class="btn-ghost" type="button">Logout</button>
+    </div>
+</header>
+<main class="container">
+    <h1>Collaborative Weekly Report Management</h1>
+
+    <section id="login" class="card">
+        <h2>Login</h2>
+        <div class="grid">
+            <input id="email" type="email" placeholder="Email" value="faculty@buildsphere.local" />
+            <input id="password" type="password" placeholder="Password" value="Faculty@123" />
+            <button id="loginBtn">Login</button>
+        </div>
+        <p id="loginStatus"></p>
+    </section>
+
+    <section id="create" class="card gated">
+        <h2>Create Weekly Report (Coordinator/Admin)</h2>
+        <div class="grid">
+            <input id="weekStart" type="date" />
+            <input id="weekEnd" type="date" />
+            <button id="createWeekBtn">Create Week</button>
+        </div>
+        <p id="createWeekStatus"></p>
+    </section>
+
+    <section id="entry" class="card gated">
+        <h2>Add Section Entry</h2>
+        <div class="grid">
+            <input id="weeklyReportId" type="number" placeholder="Weekly Report ID" />
+            <select id="sectionType"></select>
+            <input id="eventDate" type="date" />
+            <div id="sectionFields" class="field-group"></div>
+            <button id="addEntryBtn">Add Entry</button>
+        </div>
+        <p id="entryStatus"></p>
+        <p class="helper">Generated entry data (saved as JSON):</p>
+        <pre id="contentPreview"></pre>
+    </section>
+
+    <section id="dashboard" class="card gated">
+        <h2>Dashboard</h2>
+        <div class="grid">
+            <input id="dashboardWeekId" type="number" placeholder="Weekly Report ID" />
+            <button id="loadDashboardBtn">Load Dashboard</button>
+        </div>
+        <p id="dashboardStatus"></p>
+        <div id="dashboardSummary" class="grid"></div>
+        <pre id="dashboardOutput"></pre>
+    </section>
+
+    <section id="entries" class="card gated">
+        <h2>Entries</h2>
+        <div class="grid">
+            <input id="entriesWeekId" type="number" placeholder="Weekly Report ID" />
+            <button id="loadEntriesBtn">Load Entries</button>
+        </div>
+        <p id="entriesStatus"></p>
+        <div id="entriesContainer"></div>
+    </section>
+
+    <section class="card gated">
+        <h2>List Weekly Reports</h2>
+        <div class="grid">
+            <button id="listReportsBtn">List Reports</button>
+        </div>
+        <p id="listReportsStatus"></p>
+        <pre id="listReportsOutput"></pre>
+    </section>
+
+    <section id="preview" class="card gated">
+        <h2>Live Report Preview</h2>
+        <div class="grid">
+            <input id="previewWeekId" type="number" placeholder="Weekly Report ID" />
+            <button id="loadPreviewBtn">Load Preview</button>
+        </div>
+        <p id="previewStatus"></p>
+        <div id="previewContainer"></div>
+    </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
